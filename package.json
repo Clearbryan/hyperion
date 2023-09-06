@@ -9,6 +9,7 @@
     "backend:dev": "nodemon --exec ts-node main.ts",
     "backend:prod": "nodemon dist/main.js",
     "client:install": "cd frontend && npm install",
+    "packages": "npm i && npm run client:install",
     "server:install": "npm i -D",
     "hyperion:dev": "concurrently \"npm run backend:dev\" \"npm run frontend\"",
     "hyperion:prod": "concurrently \"npm run backend:prod\" \"npm run frontend\"",

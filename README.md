@@ -3,7 +3,7 @@ Node.js (https://nodejs.org/en/ - requires Node >= 18 to run)<br />
 Typescript (https://www.typescriptlang.org/)
 
 # Usage
-Clone main repository and run ```cd hyperion```
+Clone main repository and run ```cd hyperion```. In the root folder run ```npm packages```, this will install all dependencies needed for frontend and backend
 
 # Environment variables
 For the application run successfully we need a few environment variables. You can easily create environment variables by running a simple command. You can chain all the environment variables in one command separated by spaces. Command syntax ```npm run env:generate ${ENV_VARNAME}={ENV_VARKEY} ${ENV_VARNAME}={ENV_VARKEY} ```.

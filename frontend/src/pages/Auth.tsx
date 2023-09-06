@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useRegisterUserMutation, useUserLoginMutation } from '../serveices/authApi';
+import { useRegisterUserMutation, useUserLoginMutation } from '../services/authApi';
 import styled from 'styled-components';
 import AuthForm from '../components/Form';
 

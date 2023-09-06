@@ -37,11 +37,16 @@ router.post(`/register`, middleware.filterBadWords, async (req: Request, res: Re
         // encrypt user password
         const hash = Utils.hashPassword(value.password);
         const user: Record<string, any> = new User({ ...value, password: hash })
+        const newUser = Utils.stripPassword(user);
+        const token = Utils.generateToken(newUser);
         try {
             await user.save();
             return res.json({
-                sucess: true,
+                success: true,
                 message: `User registration successful.`,
+                user: newUser,
+                token
+
             });
             
         } catch (error: any) {
@@ -49,7 +54,7 @@ router.post(`/register`, middleware.filterBadWords, async (req: Request, res: Re
             if(error.code == 11000) {
                 const errorDetails = Object.entries(error.keyValue).map(
                   ([key, value]) => { return { key, value }});
-                errorMessage = `${errorDetails[0].key}: ${errorDetails[0].value} is already registered!`;
+                errorMessage = `${errorDetails[0].value} is already registered!`;
             }
             
             if(error.code == 11000) {
@@ -91,7 +96,9 @@ router.post(`/login`, async(req: Request, res: Response, _next: NextFunction) =>
             });
           }
           return res.json({
-            sucess: true,
+            success: true,
+            message: `User login successful.`,
+            user,
             token,
           });
         }

@@ -1,0 +1,36 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700;800&display=swap');
+
+$body-bg: #000;
+$text-green: rgba(247, 251, 249, 0.761);
+$text-dark: #444141;
+
+.heading {
+  color: $text-green;
+  font-weight: 400;
+  font-size: x-large;
+  
+}
+
+.form-label {
+  font-weight: 700;
+}
+
+.form-wrapper {
+  width: 400px;
+  color: $text-dark;
+}
+
+.custom-input {
+  height: 50px;
+  border-radius: 0px;
+}
+
+.custom-btn {
+  height: 50px;
+  border-radius: 0px;
+}
+
+.custom-link-text {
+  cursor: pointer;
+}

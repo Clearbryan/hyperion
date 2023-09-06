@@ -9,9 +9,7 @@ Clone main repository and run ```cd hyperion```
 For the application run successfully we need a few environment variables. You can easily create environment variables by running a simple command. You can chain all the environment variables in one command separated by spaces. Command syntax ```npm run env:generate ${ENV_VARNAME}={ENV_VARKEY} ${ENV_VARNAME}={ENV_VARKEY} ```.
 <br />
 Example env script generation for this project, copy the below command and run in root directory: 
-```
-npm run env:generate PORT=4000 DB_USER=admin DB_PASS=wZN8mm2JJyWWckQu APP_SECRET=applicationsecret
-```
+```npm run env:generate PORT=4000 DB_USER=admin DB_PASS=wZN8mm2JJyWWckQu APP_SECRET=applicationsecret```
 On success you should have a new ```.env``` file created with all you environment variables ready for use in you application
 
 # Installing Dependencies

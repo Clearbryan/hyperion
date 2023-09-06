@@ -92,8 +92,10 @@ function AuthForm({
 
   const submitUserForRegistration = async () => {
      const { username, emailAddress, password, confirmPassword } = formValues;
-
-     if (password !== confirmPassword) {
+    if(!username || !password || !emailAddress || !confirmPassword) {
+      toast.error('Please enter all fields!');
+    }
+     else if (password !== confirmPassword) {
        toast.error('Passwords do not match!');
      }
      else if (username && emailAddress && password && confirmPassword) {
@@ -104,7 +106,6 @@ function AuthForm({
          confirmPassword,
        });
 
-       console.log({ error, data });
        if (error) {
          toast.error(error && error.data && error.data.message);
        }
@@ -113,7 +114,9 @@ function AuthForm({
             toast.success(data.message)
             const { token, user } = data;
             dispatch(setUser({ ...user, token }));
-            navigate('/dashboard');
+            setTimeout(() => {
+              navigate('/dashboard');
+            }, 2000);
         }else {
           toast.error(data.message);
         }
@@ -126,15 +129,15 @@ function AuthForm({
     const { loginId, password } = rest;
     if (loginId && password) {
       const {error, data} = await loginUser({ loginId, password });
-      
-      console.log({ error, data });
       if(error){
         toast.error(error && error.data && error.data.message)
       }else {
         toast.success(data.message);
         const { token, user } = data;
         dispatch(setUser({ ...user, token }));
-        navigate('/dashboard');
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 2000);
       }
        
     } else {

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Simple Hyperion User Registration and Login System",
   "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Clearbryan/hyperion.git"
+  },
   "scripts": {
     "build": "tsc",
     "frontend": "cd frontend && npm start",

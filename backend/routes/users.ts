@@ -57,12 +57,13 @@ router.post(`/register`, middleware.filterBadWords, async (req: Request, res: Re
                 errorMessage = `${errorDetails[0].value} is already registered!`;
             }
             
-            if(error.code == 11000) {
-              return res.json({
-                 success: false,
-                 message: errorMessage || error.message,
-               });
-            }
+            // if(error.code == 11000) {
+              
+            // }
+            return res.json({
+              success: false,
+              message: errorMessage || error.message,
+            });
         }
     }
 })
